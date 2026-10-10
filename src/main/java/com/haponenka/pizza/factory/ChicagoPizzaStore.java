@@ -9,14 +9,10 @@ public class ChicagoPizzaStore extends PizzaStore {
 
   @Override
   protected Optional<Pizza> createPizza(String type) {
-    switch (type) {
-      case "cheese" -> {
-        return Optional.of(new ChicagoStyleCheesePizza());
-      }
-      case "pepperoni" -> {
-        return Optional.of(new ChicagoStylePepperoniPizza());
-      }
-    }
-    return Optional.empty();
+    return switch (type.toLowerCase()) {
+      case "cheese" -> Optional.of(new ChicagoStyleCheesePizza());
+      case "pepperoni" -> Optional.of(new ChicagoStylePepperoniPizza());
+      default -> Optional.empty();
+    };
   }
 }

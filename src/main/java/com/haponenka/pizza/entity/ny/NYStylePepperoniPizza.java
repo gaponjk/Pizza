@@ -1,12 +1,14 @@
 package com.haponenka.pizza.entity.ny;
 
 import com.haponenka.pizza.entity.Pizza;
+import java.util.List;
 
 public class NYStylePepperoniPizza extends Pizza {
   public NYStylePepperoniPizza() {
-    name = "NY City Style Pepperoni Pizza";
-    dough = "Thin Crust Dough";
-    sauce = "Marinara Sauce";
-    ingredients.add("Pepperoni Slices");
+    super(
+        "NY City Style Pepperoni Pizza",
+        "Thin Crust Dough",
+        "Marinara Sauce",
+        List.of("Pepperoni Slices"));
   }
 }
