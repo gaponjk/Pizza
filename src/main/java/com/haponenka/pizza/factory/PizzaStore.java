@@ -7,7 +7,9 @@ import java.util.Optional;
 public abstract class PizzaStore {
   public Pizza orderPizza(String type) {
     Pizza pizza;
-    pizza = createPizza(type).orElseThrow(() -> new PizzaNotExistingException(type));
+    pizza =
+        createPizza(type)
+            .orElseThrow(() -> new PizzaNotExistingException("Unknown pizza type: " + type));
 
     pizza.prepare();
     pizza.bake();

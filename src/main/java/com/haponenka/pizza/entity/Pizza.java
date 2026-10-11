@@ -22,7 +22,6 @@ public abstract class Pizza {
     log.info("Preparing {}", name);
     log.info("Tossing dough {}...", dough);
     log.info("Adding sauce {}...", sauce);
-    log.info("Adding other ingredients: ");
     log.info("Adding other ingredients: {}", String.join(", ", ingredients));
   }
 
